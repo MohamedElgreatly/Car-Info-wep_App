@@ -1,0 +1,42 @@
+.col-md-9{
+  display: flex;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.container {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+  }
+.container  button{
+    margin-right: 10px;
+    width: 10%;
+    height: 15%;
+    margin-top: 5%;
+    background-color:blueviolet;
+    color: #fff;
+    font-size: 16px;
+}
+.container button:active {
+    background-color: #3e8e41;
+  }
+header {
+    background-color:aqua;
+    color:black;
+    padding: 20px;
+    text-align: center;
+  }
+.submitB{
+    margin-right: 10px;
+    width: 10%;
+    height: 15%;
+    margin-top: 5%;
+    background-color:coral;
+    color: #fff;
+    font-size: 16px;
+}
+  
+  

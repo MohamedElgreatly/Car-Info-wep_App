@@ -1,0 +1,67 @@
+<header>Car Store For Adding Cars</header>
+
+<div class="container">
+  <button (click)="add()"> Add Car</button>
+  <button (click)="show()"> show cars </button>
+</div>
+
+<div class="container" *ngIf="buttonsControl">
+  <button (click)="Label('name')">Factory Name</button>
+  <button (click)="Label('country')">Country</button>
+  <button (click)="Label('weight')">Weight</button>
+  <button (click)="Label('height')">Height</button>
+  <button (click)="Label('color')">Color</button>
+  <button (click)="Label('distance')">Distance</button>
+  <button (click)="Label('price')">Price</button>
+  
+</div><br><br>
+<div class="col-md-9" >
+  <div *ngIf="name_Label">
+  <label for="inputText4" class="form-label">Name </label>
+  <input type="text" class="form-control" id="inputText4" [(ngModel)]="Factory_name" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('name')"> Set Name</button>  
+</div>
+  <div *ngIf="country_Label">
+  <label for="inputText4" class="form-label">Country </label>
+  <input type="text" class="form-control" id="inputText4" [(ngModel)]="country" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('country')"> Set Country</button>   
+</div>
+  <div *ngIf="weight_Label">
+  <label for="inputText4" class="form-label">Weight in kg </label>
+  <input type="number" class="form-control" id="inputText4" [(ngModel)]="weight" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('weight')"> Set Weight</button>   
+</div>
+  <div *ngIf="height_Label">
+  <label for="inputText4" class="form-label">Height in meter </label>
+  <input type="number" class="form-control" id="inputText4" [(ngModel)]="height" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('height')"> Set Height</button>   
+</div>
+  <div *ngIf="color_Label">
+  <label for="inputText4" class="form-label">Color </label>
+  <input type="text" class="form-control" id="inputText4" [(ngModel)]="color" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('color')"> Set Color</button>   
+</div>
+  <div *ngIf="distance_Label">
+  <label for="inputText4" class="form-label">Distance in km </label>
+  <input type="number" class="form-control" id="inputText4" [(ngModel)]="distance" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('distance')"> Set Distance</button>  
+</div>
+  <div *ngIf="price_Label">
+  <label for="inputText4" class="form-label">Price </label>
+  <input type="number" class="form-control" id="inputText4" [(ngModel)]="price" [ngModelOptions]="{ standalone: true }">
+  <button (click)="setLabel('price')"> Set Price</button>   
+</div>
+</div> <br>
+
+<div class="container" *ngIf="buttonsControl">
+  <button class="submitB" (click)="Build()"> Build Car</button>
+</div>
+
+<div *ngIf="!buttonsControl">
+  <ul class="list-group list-group-numbered" *ngFor="let item of items">
+    <li class="list-group-item"> Country: {{item.country}}, Factory Name: {{item.factoryName}}, Price: {{item.price}}, 
+      Weight: {{item.weight}},
+      Height: {{item.height}}, Color: {{item.color}}, Distance in KM: {{item.distance_Km}}
+    </li>
+  </ul>
+</div>
